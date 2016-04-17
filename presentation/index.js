@@ -19,7 +19,8 @@ import {
   Quote,
   Slide,
   Spectacle,
-  Text
+  Text,
+  S
 } from "spectacle";
 
 // Import image preloader util
@@ -38,8 +39,10 @@ require("spectacle/lib/themes/default/index.css");
 
 const images = {
   startup: require("../assets/startup-circles.png"),
+  startupbg: require("../assets/startup-bg.jpg"),
   lean: require("../assets/lean-circles.png"),
-  city: require("../assets/city.jpg"),
+  city: require("../assets/city2.jpg"),
+  brainstorm: require("../assets/brainstorm.jpg"),
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
   markdown: require("../assets/markdown.png"),
@@ -98,7 +101,7 @@ export default class Presentation extends React.Component {
             <Image src={images.goals.replace("/", "")} margin="20px" height="128px"/>
             <Image src={images.action.replace("/", "")} margin="20px" height="128px"/>
           </Slide>
-          <Slide transition={["slide"]} bgColor="black" bgImage={images.city.replace("/", "")} bgDarken={0.75}>
+          <Slide transition={["slide"]} bgColor="vision" bgImage={images.city.replace("/", "")} bgDarken={0.45}>
             <Heading size={1} caps fit textColor="tertiary">
               Vision
             </Heading>
@@ -128,7 +131,7 @@ export default class Presentation extends React.Component {
               <Appear><ListItem>Goals and CSF(Critical Success Factors)</ListItem></Appear>
             </List>
           </Slide>
-          <Slide transition={["slide"]} bgColor="black" bgImage={images.city.replace("/", "")} bgDarken={0.75}>
+          <Slide transition={["slide"]} bgColor="target" bgImage={images.brainstorm.replace("/", "")} bgDarken={0.45}>
             <Heading size={1} caps fit textColor="tertiary">
               GOALS
             </Heading>
@@ -150,8 +153,8 @@ export default class Presentation extends React.Component {
               We should do that as MVP
             </Heading>
             <Text textColor="tertiary" margin="40px 0 0">MVP - acts as Minimal Viable Product</Text>
-            <Text textColor="tertiary" margin="20px 0 0" >An MVP isn’t the quickest or the most perfect product.</Text>
-            <Text textColor="tertiary" margin="20px 0 0">It's a product with minimum development effort that creates maximum value to maximize learning while minimizing risk and investment</Text>
+            <Text textColor="tertiary" margin="20px 0 0" >An MVP <S type="bold">isn’t</S> the quickest or the most perfect product.</Text>
+            <Text textColor="tertiary" margin="20px 0 0">It's a product with <S type="bold" textColor="primary">minimum development effort</S>  that creates <S type="bold" textColor="primary">maximum value</S> to maximize learning while minimizing risk and investment</Text>
           </Slide>
           <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
             <Image src="http://www.mhonorato.com/wp-content/uploads/2014/06/BnkTGbTIcAAj5Qt.png" margin="20px"/>
@@ -177,10 +180,10 @@ export default class Presentation extends React.Component {
             <List>
               <ListItem>set of data describing the vision of a product</ListItem>
               <ListItem>list of high level stories based on vision with priorities</ListItem>
-              <ListItem>?the main architectural decisions should be determined, as well as proof-of-concept ones</ListItem>
+              <ListItem>the main architectural decisions should be determined, as well as proof-of-concept ones</ListItem>
             </List>
           </Slide>
-          <Slide transition={["slide"]} bgColor="black" bgImage={images.city.replace("/", "")} bgDarken={0.75}>
+          <Slide transition={["slide"]} bgColor="action" bgImage={images.startupbg.replace("/", "")} bgDarken={0.45}>
             <Heading size={1} caps fit textColor="tertiary">
               Action
             </Heading>
